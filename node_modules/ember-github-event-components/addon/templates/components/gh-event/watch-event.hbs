@@ -1,0 +1,13 @@
+<div class="body">
+  {{gh-octicon 'star'}}
+
+  <div class="title">
+    <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a>
+    starred
+    <a href="https://github.com/{{event.repo.name}}">
+      {{~event.repo.name~}}
+    </a>
+  </div>
+
+  <div class="time">{{moment-from-now event.created_at}}</div>
+</div>

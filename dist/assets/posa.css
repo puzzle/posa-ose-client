@@ -1,0 +1,86 @@
+@import 'fonts.css';
+
+:root {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url(/assets/pictures/bg-top-left.svg);
+  background-position: left top;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+code, pre {
+  font-feature-settings: 'liga', 'lnum', 'kern';
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.page-header h1 {
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+  margin-left: 5rem;
+}
+
+.page-header h1 > small {
+  display: block;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header, main {
+  max-width: 30rem;
+}
+
+main {
+  margin: 0 auto;
+}
+
+.github-event:not(:last-of-type) {
+  border-bottom: 1px solid rgba(216, 216, 216, 0.5);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image:
+      url(/assets/pictures/bg-top-left.svg),
+      url(/assets/pictures/bg-top-right.svg);
+
+    background-position:
+      left top,
+      right top;
+  }
+
+  .page-header {
+    margin: 0 auto;
+  }
+
+  .page-header h1 {
+    display: inline-block;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    margin: 0 auto;
+  }
+
+  .page-header, main {
+    max-width: 37rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  .page-header, main {
+    max-width: 45rem;
+  }
+
+  .page-header h1 > small {
+    display: inline;
+    font-size: 0.65em;
+  }
+}

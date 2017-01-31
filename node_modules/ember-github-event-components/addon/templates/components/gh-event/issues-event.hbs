@@ -1,0 +1,22 @@
+<div class="body">
+  {{gh-octicon (concat 'issue-' event.payload.action) class='mega-octicon'}}
+
+  <div class="time">{{moment-from-now event.created_at}}</div>
+
+  <div class="title">
+    <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a>
+    {{event.payload.action}} issue
+    <a href="https://github.com/{{event.repo.name}}/issues/{{event.payload.issue.number}}">
+      {{~event.repo.name~}}#{{event.payload.issue.number}}
+    </a>
+  </div>
+
+  <div class="details">
+    <a href="https://github.com/{{event.actor.login}}">
+      <img class="gravatar" alt="@{{event.actor.login}}" src={{event.actor.avatar_url}} width="48" height="48">
+    </a>
+    <div class="message">
+      <blockquote>{{event.payload.issue.title}}</blockquote>
+    </div>
+  </div>
+</div>

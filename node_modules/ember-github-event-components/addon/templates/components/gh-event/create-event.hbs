@@ -1,0 +1,16 @@
+<div class="body">
+  {{gh-octicon icon}}
+
+  <div class="title">
+    <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a>
+    created {{event.payload.ref_type}}
+    <a href="https://github.com/{{event.repo.name}}/tree/{{event.payload.ref}}">
+      {{~event.payload.ref~}}
+    </a>
+    at
+    <a href="https://github.com/{{event.repo.name}}">
+      {{~event.repo.name~}}
+    </a>
+  </div>
+  <div class="time">{{moment-from-now event.created_at}}</div>
+</div>

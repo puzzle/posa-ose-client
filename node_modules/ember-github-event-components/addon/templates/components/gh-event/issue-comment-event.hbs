@@ -1,0 +1,22 @@
+<div class="body">
+  {{gh-octicon 'comment-discussion' class='mega-octicon'}}
+
+  <div class="time">{{moment-from-now event.created_at}}</div>
+
+  <div class="title">
+    <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a>
+    commented on issue
+    <a href="https://github.com/{{event.repo.name}}/issues/{{event.payload.issue.number}}#issuecomment-{{event.payload.comment.id}}">
+      {{~event.repo.name~}}#{{event.payload.issue.number}}
+    </a>
+  </div>
+
+  <div class="details">
+    <a href="https://github.com/{{event.actor.login}}">
+      <img class="gravatar" alt="@{{event.actor.login}}" src={{event.actor.avatar_url}} width="48" height="48">
+    </a>
+    <div class="message markdown-body">
+      <blockquote>{{md-text text=event.payload.comment.body}}</blockquote>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="body">
+  {{gh-octicon 'git-pull-request' class='mega-octicon'}}
+
+  <div class="time">{{moment-from-now event.created_at}}</div>
+  <div class="title">
+    <a href="https://github.com/{{event.actor.login}}">{{event.actor.login}}</a>
+    {{event.payload.action}} pull request
+    <a href="https://github.com/{{event.repo.name}}/pull/{{event.payload.number}}">
+      {{event.repo.name}}#{{event.payload.number}}
+    </a>
+  </div>
+  <div class="details">
+    <a href="https://github.com/{{event.actor.login}}">
+      <img class="gravatar" alt="@{{event.actor.login}}" src={{event.actor.avatar_url}} width="48" height="48">
+    </a>
+    <div class="message">
+      <blockquote>
+        {{event.payload.pull_request.title}}
+      </blockquote>
+      <div class="pull-info">
+        {{gh-octicon 'git-commit'}}
+        <em>{{event.payload.pull_request.commits}}</em>
+        commits with
+        <em>{{event.payload.pull_request.additions}}</em>
+        additions and
+        <em>{{event.payload.pull_request.deletions}}</em>
+        deletions
+      </div>
+    </div>
+  </div>
+</div>
