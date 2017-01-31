@@ -44,7 +44,7 @@ RUN set -ex && \
     /usr/share/man /tmp/* /usr/local/lib/node_modules/npm/man /usr/local/lib/node_modules/npm/doc /usr/local/lib/node_modules/npm/html
 
 RUN npm install -g bower ember-cli yarn
-COPY package.json bower.json yarn.lock /tmp/builddir/
+COPY package.json bower.json  /tmp/builddir/
 RUN cd /tmp/builddir && \
     NODE_ENV=development yarn install && \
     bower install --allow-root
